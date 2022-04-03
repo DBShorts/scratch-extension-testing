@@ -21,7 +21,7 @@ class DamianExtension {
                 },
             }],
     };
-    lines({LINE, TEXT_STRING}) {
-        return TEXT_STRING.split("\n")[LINE];
+    lines (args) {
+        return args.TEXT_STRING.split("\n")[args.LINE];
     };
 }
