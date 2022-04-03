@@ -1,28 +1,27 @@
-class Damian's Extension {
+class DamianExtension {
     getInfo() {
         return {
-            "id": "dbextension",
-            "name": "DBExtension",
-            "blocks": [{
-                    "opcode": "lines",
-                    "blockType": "reporter",
-                    "text": "line [line] of [text]",
-                    "arguments": {
-                        "line": {
-                            "type": "number",
-                            "defaultValue": "2"
+            id: 'dbextension',
+            name: 'DBExtension',
+            blocks: [
+                {
+                    opcode: 'lines',
+                    blockType: BlockType.REPORTER,
+                    text: 'line [LINE] of [TEXT_STRING]',
+                    arguments: {
+                        LINE: {
+                            type: ArgumentType.NUMBER,
+                            defaultValue: '2'
                         },
-                        "text": {
-                            "type": "string",
-                            "defaultValue": "Hello\nWorld!"
+                        TEXT_STRING: {
+                            type: ArgumentType.STRING,
+                            defaultValue: 'Hello\nWorld!;
                         }
                     }
                 },
             }],
-        "menus": { //we will get back to this in a later tutorial
-        }
     };
-    lines({line, text}) {
-        return text.split("\n")[line];
+    lines({LINE, TEXT_STRING}) {
+        return TEXT_STRING.split("\n")[LINE];
     };
 }
