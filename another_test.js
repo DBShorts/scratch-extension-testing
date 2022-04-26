@@ -24,7 +24,7 @@ class LineBreaker {
   }
 
   get (args) {
-    return args.TEXT.split("/\r?\n/")[args.NUMBER]
+    return args.TEXT.split(System.getProperty("line.separator"))[args.NUMBER]
   }
 }
 
